@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>libunicam</name>
+  <version>0.0.0</version>
+  <description>One package for multiplecameras</description>
+
+  <maintainer email="jhavyomkesh@gmail.com">Vyomkesh Jha</maintainer>
+  <license>MIT</license>
+
+  <depend>boost</depend>
+  <depend>camera_info_manager</depend>
+  <depend>cv_bridge</depend>
+  <depend>libopencv-dev</depend>
+  <depend>image_transport</depend>
+  <depend>roscpp</depend>
+
+  <build_depend>roslint</build_depend>
+  <build_depend>cmake_modules</build_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export/>
+</package>
