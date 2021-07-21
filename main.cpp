@@ -11,26 +11,36 @@ int main() {
     UnicamDeviceProvider *realsenseCameraProvider = new RealsenseProvider();
     realsenseCameraProvider->initializeCameras();
 
-    UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");
-    currentDepthFrameRef = camera->getDepthFrame();
-    frameSaver->addNewFrameToBuffer(currentDepthFrameRef);       //proceedToNextMeasurement is true when the current measurement frames have been persisted
-    //realsenseCameraProvider->spinOnce() to get the next frame
+    UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");  //connects to the camera
 
-    std::list<frame_data> frameBuffer = frameSaver->getFrameDataList();
-
-    //std::cout<<"waiting for .1 seconds before starting to buffer frames"<<std::endl;
-    //cv::waitKey(100);
-
-    //loop here
     int fileCount = 0;
-    for (frame_data dataFrame: frameBuffer) {
-        frameSaver->persistMatrixToFile(dataFrame.depthFrame, fileCount, "/home/robot/Documents/unicam-lib-master/");
-        fileCount++;
-    }
-    frameBuffer.clear();    //clear the list for next measurement
-}
+    int requestedFileCount = 0;
+    std::cout << "Write the requested number of frames (maximum is 5): ";
 
-//testing commit
-//
-//
+    do {        //to prevent too long processes
+        std::cin >> requestedFileCount;
+    } while (requestedFileCount > 5);
+
+    while (fileCount < requestedFileCount)
+    {
+        currentDepthFrameRef = camera->getDepthFrame();                       //gets new depth frame
+        frameSaver->addNewFrameToBuffer(currentDepthFrameRef);
+        //proceedToNextMeasurement is true when the current measurement frames have been persisted
+
+        //if (proceedToNextMeasurement) realsenseCameraProvider->spinOnce(); //to get the next frame
+
+        std::list<frame_data> frameBuffer = frameSaver->getFrameDataList();
+
+        std::cout<<"waiting for 1 seconds before starting to buffer frames"<<std::endl;
+        cv::waitKey(1000);
+
+        for (frame_data dataFrame: frameBuffer)
+        {
+            frameSaver->persistMatrixToFile(dataFrame.depthFrame, fileCount,
+                                            "/home/robot/Documents/unicam-lib-master/");
+            fileCount++;
+        }
+        frameBuffer.clear();    //clear the list for next measurement
+   }
+}
 
