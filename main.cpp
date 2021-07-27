@@ -2,9 +2,9 @@
 #include "headers/unicam/UnicamDeviceProvider.h"
 #include "headers/RealsenseProvider.h"
 #include "headers/frameSaver/CameraFrameSaver.h"
-using namespace cv;
+
 int main() {
-    Mat currentDepthFrameRef;
+    cv::Mat currentDepthFrameRef;
 
     CameraFrameSaver* frameSaver = new CameraFrameSaver();
 
@@ -35,6 +35,7 @@ int main() {
 
         std::cout<<"waiting for 1 seconds before starting to buffer frames"<<std::endl;
         cv::waitKey(1000);
+
 
         for (frame_data dataFrame: frameBuffer)
         {

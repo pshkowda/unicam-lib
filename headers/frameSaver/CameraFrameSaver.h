@@ -27,7 +27,7 @@ public:
 
 private:
     int nSavedFrames = 1;
-    int distanceTarget = 1000;
+    int distanceTarget = 1500;
     std::list<frame_data> frameDataList;
 };
 

@@ -7,6 +7,8 @@
 #include "../headers/frameSaver//CameraFrameSaver.h"
 #include "../headers/async_buf.h"
 
+#include <sys/stat.h>
+
 template<int I>
 struct CvType {
 };
@@ -24,8 +26,12 @@ bool CameraFrameSaver::addNewFrameToBuffer(cv::Mat data) {
 
 bool CameraFrameSaver::persistMatrixToFile(cv::Mat data, int index, std::string base_path) {
     std::cout << "persisting frame = " << nSavedFrames << std::endl;
+
+   // const  char *folderPath = base_path + std::sprintf( distanceTarget);
+    mkdir("/home/robot/Documents/unicam-lib-master/1500",S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);   //creates new specific folder
+
     std::string fileName =
-            base_path + std::to_string(distanceTarget) + "/realsense-frame-stream-" + std::to_string(index) + ".yaml";
+            base_path + std::to_string(distanceTarget) + "/D435i_" + std::to_string(index) + ".yaml";
     std::cout << "saving to file: " << fileName << std::endl;
     async_buf sbuf(fileName);
     std::ostream astream(&sbuf);
