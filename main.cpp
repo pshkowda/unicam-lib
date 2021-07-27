@@ -1,7 +1,10 @@
-#include<iostream>
+#include <iostream>
 #include "headers/unicam/UnicamDeviceProvider.h"
 #include "headers/RealsenseProvider.h"
 #include "headers/frameSaver/CameraFrameSaver.h"
+#include <sys/stat.h>
+#include "headers/orientationControl/CameraOrientationController.h"
+
 
 int main() {
     cv::Mat currentDepthFrameRef;
@@ -12,6 +15,21 @@ int main() {
     realsenseCameraProvider->initializeCameras();
 
     UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");  //connects to the camera
+
+    //code for aligning device
+    CameraOrientationController* controller = new CameraOrientationController("/dev/ttyACM0", camera, realsenseCameraProvider);
+
+    int setDistance = 0;
+
+            std::cout<<"please enter the distance for calibration"<<std::endl;
+            std::cin>>setDistance;
+            mkdir(("depth"+std::to_string(setDistance)).c_str(), 0777);         //create the data storage dir
+            controller->updateDistanceTarget(setDistance);
+            std::cout<<std::endl<<" the distance has been set to "<<setDistance<<std::endl;
+
+    controller->realignDevice(currentDepthFrameRef);
+    controller->isAtExpectedDistance(currentDepthFrameRef);
+    //end of align
 
     int fileCount = 0;
     int requestedFileCount = 0;

@@ -27,7 +27,6 @@ bool CameraFrameSaver::addNewFrameToBuffer(cv::Mat data) {
 bool CameraFrameSaver::persistMatrixToFile(cv::Mat data, int index, std::string base_path) {
     std::cout << "persisting frame = " << nSavedFrames << std::endl;
 
-   // const  char *folderPath = base_path + std::sprintf( distanceTarget);
     mkdir("/home/robot/Documents/unicam-lib-master/1500",S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);   //creates new specific folder
 
     std::string fileName =
