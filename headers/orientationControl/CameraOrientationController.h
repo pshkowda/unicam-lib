@@ -24,7 +24,6 @@ public:
     void updateDistanceTarget(int newDistanceTarget);
     bool realignDevice(cv::Mat &alignedDepthFrame);     //returns true if aligned, parameter is the reference to the current depth frame
     bool isAtExpectedDistance(cv::Mat currentMatrix);
-    bool bufferedWriteToFile(cv::Mat data);
 
     ~CameraOrientationController();
 
@@ -36,12 +35,11 @@ private:
     std::string arduinoPort;
     FILE *arduinoSerial;
     UnicamCamera* cameraControl;
-    UnicamDeviceProvider *xtion;
+    UnicamDeviceProvider *realsenseCameraProvider;
     std::list<frame_data> frameDataList;
 
     bool isAligned(cv::Mat depthFrame);
     double getDistanceFromCenterOfSurface(cv::Mat &depthFrame);
-    bool persistMatrixToFile(cv::Mat data, int index, int hz, int vert, int centralDist);
     float computeAverageDistanceInPixelRegion(int centerCol, int centerRow, int sqrDim, cv::Mat depthFrame);
     void computeDisparity(cv::Mat &depthFrame, int *horizontalDisparity, int *verticalDisparity);
 

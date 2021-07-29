@@ -16,37 +16,30 @@ int main() {
 
     UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");  //connects to the camera
 
-    //code for aligning device
+    //to create a folder with name od the distance
+    std::cout << "Insert the current distance";
+    int currentDistance = 0;
+    std::cin >> currentDistance;
+    mkdir(("/home/robot/Documents/unicam-lib-master"+std::to_string(currentDistance)).c_str(), 0777);   //creates new specific folder
+
+    //to align camera
     CameraOrientationController* controller = new CameraOrientationController("/dev/ttyACM0", camera, realsenseCameraProvider);
+    controller->updateDistanceTarget(currentDistance);
+    bool isAlignedNow = controller->realignDevice(currentDepthFrameRef);
+    bool isDistanceEqualToTarget = controller->isAtExpectedDistance(currentDepthFrameRef);
 
-    int setDistance = 0;
-
-            std::cout<<"please enter the distance for calibration"<<std::endl;
-            std::cin>>setDistance;
-            mkdir(("depth"+std::to_string(setDistance)).c_str(), 0777);         //create the data storage dir
-            controller->updateDistanceTarget(setDistance);
-            std::cout<<std::endl<<" the distance has been set to "<<setDistance<<std::endl;
-
-    controller->realignDevice(currentDepthFrameRef);
-    controller->isAtExpectedDistance(currentDepthFrameRef);
-    //end of align
-
+    //to determine number of frames taken
     int fileCount = 0;
     int requestedFileCount = 0;
-    std::cout << "Write the requested number of frames (maximum is 5): "; //to determine requested number of frames
-
+    std::cout << "Set the requested number of frames (maximum is 5): "; //to determine requested number of frames
     do {        //to prevent too long processes
         std::cin >> requestedFileCount;
-    } while (requestedFileCount > 5); //just for test
+    } while (requestedFileCount > 5); //5 is just for test
 
-    while (fileCount < requestedFileCount)
+    while (fileCount < requestedFileCount && isAlignedNow && isDistanceEqualToTarget)
     {
-        currentDepthFrameRef = camera->getDepthFrame();                       //gets new depth frame
+        currentDepthFrameRef = camera->getDepthFrame(); //gets new depth frame
         frameSaver->addNewFrameToBuffer(currentDepthFrameRef);
-
-        //proceedToNextMeasurement is true when the current measurement frames have been persisted
-
-        //if (proceedToNextMeasurement)
         realsenseCameraProvider->spinOnce(); //to get the next frame
 
         std::list<frame_data> frameBuffer = frameSaver->getFrameDataList();
