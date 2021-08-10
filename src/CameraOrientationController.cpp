@@ -63,6 +63,7 @@ bool CameraOrientationController::realignDevice(cv::Mat &alignedDepthFrame) {
     return false;
 }
 
+//gets distance from center of current frame
 bool CameraOrientationController::isAtExpectedDistance(cv::Mat depthFrame) {
     int distance = getDistanceFromCenterOfSurface(depthFrame);
     std::cout<<"current distance = "<<distance<<" target = "<<distanceTarget<<std::endl;

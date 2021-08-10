@@ -8,27 +8,32 @@
 
 int main() {
     cv::Mat currentDepthFrameRef;
+    int currentDistance = 0;
+    bool isAlignedNow = false;
+    bool isDistanceEqualToTarget = false;
 
+    //camera type and initialization
     CameraFrameSaver* frameSaver = new CameraFrameSaver();
-
     UnicamDeviceProvider *realsenseCameraProvider = new RealsenseProvider();
     realsenseCameraProvider->initializeCameras();
-
     UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");  //connects to the camera
 
-    //to align camera
+    //to define camera controller
     CameraOrientationController* controller = new CameraOrientationController("/dev/ttyACM0", camera, realsenseCameraProvider);
+    //to align camera
+    controller->realignDevice(currentDepthFrameRef);
 
     //to create a folder with name od the distance
     std::cout << "Insert the current distance: ";
-    int currentDistance = 0;
     std::cin >> currentDistance;
     mkdir(("/home/robot/Documents/unicam-lib-master/"+std::to_string(currentDistance)).c_str(), 0777);   //creates new specific folder
 
+    //updates distance target to controller and frame saver
     frameSaver->updateDistanceTarget(currentDistance);
     controller->updateDistanceTarget(currentDistance);
-    bool isAlignedNow = controller->realignDevice(currentDepthFrameRef);
-    bool isDistanceEqualToTarget = controller->isAtExpectedDistance(currentDepthFrameRef);
+
+    isAlignedNow = controller->realignDevice(currentDepthFrameRef);                            //check if device is aligned
+    isDistanceEqualToTarget = controller->isAtExpectedDistance(currentDepthFrameRef); //checks if expected distance is right to measured distance
 
     //to determine number of frames taken
     int fileCount = 0;
