@@ -32,6 +32,7 @@ CameraOrientationController::CameraOrientationController(const char *arduinoPort
     arduinoSerial = fopen(arduinoPort, "w");
     cv::waitKey(500);
     if (arduinoSerial)
+        std::cout<<"Setting up default angle."<<std::endl;
         fprintf(arduinoSerial, "%d:%d\n", 90, 150);
     cv::waitKey(2500);
 }
@@ -55,7 +56,7 @@ bool CameraOrientationController::realignDevice(cv::Mat &alignedDepthFrame) {
                           << std::endl;
                 cv::waitKey(100);
                 if (arduinoSerial)
-                    fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
+                fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
                 cv::waitKey(100);
             }
         }
