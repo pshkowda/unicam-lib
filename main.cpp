@@ -16,14 +16,16 @@ int main() {
 
     UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");  //connects to the camera
 
-    //to create a folder with name od the distance
-    std::cout << "Insert the current distance";
-    int currentDistance = 0;
-    std::cin >> currentDistance;
-    mkdir(("/home/robot/Documents/unicam-lib-master"+std::to_string(currentDistance)).c_str(), 0777);   //creates new specific folder
-
     //to align camera
     CameraOrientationController* controller = new CameraOrientationController("/dev/ttyACM0", camera, realsenseCameraProvider);
+
+    //to create a folder with name od the distance
+    std::cout << "Insert the current distance: ";
+    int currentDistance = 0;
+    std::cin >> currentDistance;
+    mkdir(("/home/robot/Documents/unicam-lib-master/"+std::to_string(currentDistance)).c_str(), 0777);   //creates new specific folder
+
+    frameSaver->updateDistanceTarget(currentDistance);
     controller->updateDistanceTarget(currentDistance);
     bool isAlignedNow = controller->realignDevice(currentDepthFrameRef);
     bool isDistanceEqualToTarget = controller->isAtExpectedDistance(currentDepthFrameRef);
@@ -31,10 +33,10 @@ int main() {
     //to determine number of frames taken
     int fileCount = 0;
     int requestedFileCount = 0;
-    std::cout << "Set the requested number of frames (maximum is 5): "; //to determine requested number of frames
+    std::cout << "Set the requested number of frames (maximum is 20): "; //to determine requested number of frames
     do {        //to prevent too long processes
         std::cin >> requestedFileCount;
-    } while (requestedFileCount > 5); //5 is just for test
+    } while (requestedFileCount > 20); //5 is just for test
 
     while (fileCount < requestedFileCount && isAlignedNow && isDistanceEqualToTarget)
     {

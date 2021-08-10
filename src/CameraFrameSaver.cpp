@@ -7,8 +7,6 @@
 #include "../headers/frameSaver//CameraFrameSaver.h"
 #include "../headers/async_buf.h"
 
-#include <sys/stat.h>
-
 template<int I>
 struct CvType {
 };
@@ -19,9 +17,9 @@ struct CvType<CV_16U> {
 
 //returns false until all the files have been persisted to storage, true if frame write is complete
 bool CameraFrameSaver::addNewFrameToBuffer(cv::Mat data) {
-        frame_data dataM(data);  //todo: fix the timestamp issue
-        frameDataList.emplace_back(dataM);
-        return false;
+    frame_data dataM(data);  //todo: fix the timestamp issue
+    frameDataList.emplace_back(dataM);
+    return false;
 }
 
 bool CameraFrameSaver::persistMatrixToFile(cv::Mat data, int index, std::string base_path) {
@@ -45,7 +43,13 @@ bool CameraFrameSaver::persistMatrixToFile(cv::Mat data, int index, std::string 
     return true;
 }
 
+void CameraFrameSaver::updateDistanceTarget(int newTarget) {
+    distanceTarget = newTarget;
+}
+
 std::list<frame_data> CameraFrameSaver::getFrameDataList() {
     return frameDataList;
 }
+
+
 

@@ -21,7 +21,7 @@ public:
 
     explicit CameraOrientationController(const char *arduinoPort , UnicamCamera *camera, UnicamDeviceProvider *xtion);
 
-    void updateDistanceTarget(int newDistanceTarget);
+    void updateDistanceTarget(int newTarget);
     bool realignDevice(cv::Mat &alignedDepthFrame);     //returns true if aligned, parameter is the reference to the current depth frame
     bool isAtExpectedDistance(cv::Mat currentMatrix);
 
