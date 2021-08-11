@@ -38,12 +38,12 @@ int main() {
     //to determine number of frames taken
     int fileCount = 0;
     int requestedFileCount = 0;
-    std::cout << "Set the requested number of frames (maximum is 20): "; //to determine requested number of frames
+    std::cout << "Set the requested number of frames (maximum is 50): "; //to determine requested number of frames
     do {        //to prevent too long processes
         std::cin >> requestedFileCount;
-    } while (requestedFileCount > 20); //5 is just for test
+    } while (requestedFileCount > 50);
 
-    while (fileCount < requestedFileCount && isAlignedNow && isDistanceEqualToTarget)
+    while (fileCount < requestedFileCount)
     {
         currentDepthFrameRef = camera->getDepthFrame(); //gets new depth frame
         frameSaver->addNewFrameToBuffer(currentDepthFrameRef);
@@ -53,7 +53,6 @@ int main() {
 
         std::cout<<"waiting for 1 seconds before starting to buffer frames"<<std::endl;
         cv::waitKey(1000);
-
 
         for (frame_data dataFrame: frameBuffer)
         {

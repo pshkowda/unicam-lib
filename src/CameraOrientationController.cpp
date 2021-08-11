@@ -35,7 +35,6 @@ CameraOrientationController::CameraOrientationController(const char *arduinoPort
         std::cout << "Setting up default angle." << std::endl;
         fprintf(arduinoSerial, "%d:%d\n", 93, 150);
         cv::waitKey(1000);
-
     }
     cv::waitKey(2500);
 }
