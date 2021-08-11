@@ -31,17 +31,20 @@ CameraOrientationController::CameraOrientationController(const char *arduinoPort
     this->arduinoPort = arduinoPort;
     arduinoSerial = fopen(arduinoPort, "w");
     cv::waitKey(500);
-    if (arduinoSerial)
-        std::cout<<"Setting up default angle."<<std::endl;
-        fprintf(arduinoSerial, "%d:%d\n", 90, 150);
+    if (arduinoSerial) {
+        std::cout << "Setting up default angle." << std::endl;
+        fprintf(arduinoSerial, "%d:%d\n", 93, 150);
+        cv::waitKey(1000);
+
+    }
     cv::waitKey(2500);
 }
 
 //returns true if the frame is aligned with the current aligned depth frame
 bool CameraOrientationController::realignDevice(cv::Mat &alignedDepthFrame) {
 
-    for (int baseAngle = 150; baseAngle <= 158; baseAngle++) {
-        for (int topAngle = 88; topAngle <= 98; topAngle++) {
+    for (int baseAngle = 88; baseAngle <= 98; baseAngle++) {
+        for (int topAngle = 150; topAngle <= 158; topAngle++) {
 
             realsenseCameraProvider->spinOnce();
             cv::Mat currentDepthImage = cameraControl->getDepthFrame();
@@ -55,9 +58,11 @@ bool CameraOrientationController::realignDevice(cv::Mat &alignedDepthFrame) {
                 std::cout << "aligning... updating angles :: top angle = " << topAngle << " bottom angle " << baseAngle
                           << std::endl;
                 cv::waitKey(100);
-                if (arduinoSerial)
-                fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
-                cv::waitKey(100);
+                if (arduinoSerial) {
+                    int data = fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
+                    std::cout << "bytes printed = " << data << std::endl;
+                    cv::waitKey(100);
+                }
             }
         }
     }

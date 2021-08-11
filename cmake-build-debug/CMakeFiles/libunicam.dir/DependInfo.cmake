@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/robot/Documents/unicam-lib-master/main.cpp" "/home/robot/Documents/unicam-lib-master/cmake-build-debug/CMakeFiles/libunicam.dir/main.cpp.o"
   "/home/robot/Documents/unicam-lib-master/src/CameraFrameSaver.cpp" "/home/robot/Documents/unicam-lib-master/cmake-build-debug/CMakeFiles/libunicam.dir/src/CameraFrameSaver.cpp.o"
+  "/home/robot/Documents/unicam-lib-master/src/CameraOrientationController.cpp" "/home/robot/Documents/unicam-lib-master/cmake-build-debug/CMakeFiles/libunicam.dir/src/CameraOrientationController.cpp.o"
   "/home/robot/Documents/unicam-lib-master/src/RealsenseDevice.cpp" "/home/robot/Documents/unicam-lib-master/cmake-build-debug/CMakeFiles/libunicam.dir/src/RealsenseDevice.cpp.o"
   "/home/robot/Documents/unicam-lib-master/src/RealsenseProvider.cpp" "/home/robot/Documents/unicam-lib-master/cmake-build-debug/CMakeFiles/libunicam.dir/src/RealsenseProvider.cpp.o"
   )

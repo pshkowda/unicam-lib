@@ -64,4 +64,3 @@ int main() {
         frameBuffer.clear();    //clear the list for next measurement
    }
 }
-

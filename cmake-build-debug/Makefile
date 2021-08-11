@@ -196,6 +196,33 @@ src/CameraFrameSaver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraFrameSaver.cpp.s
 .PHONY : src/CameraFrameSaver.cpp.s
 
+src/CameraOrientationController.o: src/CameraOrientationController.cpp.o
+
+.PHONY : src/CameraOrientationController.o
+
+# target to build an object file
+src/CameraOrientationController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraOrientationController.cpp.o
+.PHONY : src/CameraOrientationController.cpp.o
+
+src/CameraOrientationController.i: src/CameraOrientationController.cpp.i
+
+.PHONY : src/CameraOrientationController.i
+
+# target to preprocess a source file
+src/CameraOrientationController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraOrientationController.cpp.i
+.PHONY : src/CameraOrientationController.cpp.i
+
+src/CameraOrientationController.s: src/CameraOrientationController.cpp.s
+
+.PHONY : src/CameraOrientationController.s
+
+# target to generate assembly for a file
+src/CameraOrientationController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraOrientationController.cpp.s
+.PHONY : src/CameraOrientationController.cpp.s
+
 src/RealsenseDevice.o: src/RealsenseDevice.cpp.o
 
 .PHONY : src/RealsenseDevice.o
@@ -265,6 +292,9 @@ help:
 	@echo "... src/CameraFrameSaver.o"
 	@echo "... src/CameraFrameSaver.i"
 	@echo "... src/CameraFrameSaver.s"
+	@echo "... src/CameraOrientationController.o"
+	@echo "... src/CameraOrientationController.i"
+	@echo "... src/CameraOrientationController.s"
 	@echo "... src/RealsenseDevice.o"
 	@echo "... src/RealsenseDevice.i"
 	@echo "... src/RealsenseDevice.s"

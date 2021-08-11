@@ -104,6 +104,9 @@
 		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/frame_data.h">
 			<Option target="libunicam"/>
 		</Unit>
+		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/orientationControl/CameraOrientationController.h">
+			<Option target="libunicam"/>
+		</Unit>
 		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamApi.h">
 			<Option target="libunicam"/>
 		</Unit>
@@ -120,6 +123,9 @@
 			<Option target="libunicam"/>
 		</Unit>
 		<Unit filename="/home/robot/Documents/unicam-lib-master/src/CameraFrameSaver.cpp">
+			<Option target="libunicam"/>
+		</Unit>
+		<Unit filename="/home/robot/Documents/unicam-lib-master/src/CameraOrientationController.cpp">
 			<Option target="libunicam"/>
 		</Unit>
 		<Unit filename="/home/robot/Documents/unicam-lib-master/src/RealsenseDevice.cpp">

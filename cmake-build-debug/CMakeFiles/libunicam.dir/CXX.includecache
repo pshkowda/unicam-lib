@@ -6,38 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/robot/Documents/unicam-lib-master/headers/RealsenseCamera.h
-librealsense2/hpp/rs_frame.hpp
--
-librealsense2/hpp/rs_pipeline.hpp
--
-unicam/UnicamCamera.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamCamera.h
-
-/home/robot/Documents/unicam-lib-master/headers/RealsenseDevice.h
-librealsense2/hpp/rs_frame.hpp
--
-librealsense2/hpp/rs_pipeline.hpp
--
-mutex
--
-map
--
-iostream
--
-RealsenseCamera.h
-/home/robot/Documents/unicam-lib-master/headers/RealsenseCamera.h
-
-/home/robot/Documents/unicam-lib-master/headers/RealsenseProvider.h
-RealsenseDevice.h
-/home/robot/Documents/unicam-lib-master/headers/RealsenseDevice.h
-unicam/UnicamDeviceProvider.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDeviceProvider.h
-librealsense2/rs.hpp
--
-opencv2/opencv.hpp
--
-
 /home/robot/Documents/unicam-lib-master/headers/async_buf.h
 condition_variable
 -
@@ -56,7 +24,13 @@ thread
 vector
 -
 
-/home/robot/Documents/unicam-lib-master/headers/frameSaver/CameraFrameSaver.h
+/home/robot/Documents/unicam-lib-master/headers/frame_data.h
+opencv2/core/mat.hpp
+-
+string
+-
+
+/home/robot/Documents/unicam-lib-master/headers/orientationControl/CameraOrientationController.h
 string
 -
 opencv2/core/mat.hpp
@@ -69,12 +43,6 @@ fstream
 /home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDeviceProvider.h
 ../frame_data.h
 /home/robot/Documents/unicam-lib-master/headers/frame_data.h
-
-/home/robot/Documents/unicam-lib-master/headers/frame_data.h
-opencv2/core/mat.hpp
--
-string
--
 
 /home/robot/Documents/unicam-lib-master/headers/unicam/UnicamCamera.h
 opencv2/core/mat.hpp
@@ -92,23 +60,13 @@ UnicamCamera.h
 
 /home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDevices.h
 
-/home/robot/Documents/unicam-lib-master/main.cpp
-iostream
--
-headers/unicam/UnicamDeviceProvider.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDeviceProvider.h
-headers/RealsenseProvider.h
-/home/robot/Documents/unicam-lib-master/headers/RealsenseProvider.h
-headers/frameSaver/CameraFrameSaver.h
-/home/robot/Documents/unicam-lib-master/headers/frameSaver/CameraFrameSaver.h
-
-/home/robot/Documents/unicam-lib-master/src/CameraFrameSaver.cpp
+/home/robot/Documents/unicam-lib-master/src/CameraOrientationController.cpp
 iostream
 -
 opencv2/opencv.hpp
 -
-../headers/frameSaver/CameraFrameSaver.h
-/home/robot/Documents/unicam-lib-master/headers/frameSaver/CameraFrameSaver.h
+../headers/orientationControl/CameraOrientationController.h
+/home/robot/Documents/unicam-lib-master/headers/orientationControl/CameraOrientationController.h
 ../headers/async_buf.h
 /home/robot/Documents/unicam-lib-master/headers/async_buf.h
 
