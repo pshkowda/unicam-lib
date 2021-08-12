@@ -26,7 +26,7 @@ bool CameraFrameSaver::persistMatrixToFile(cv::Mat data, int index, std::string 
     std::cout << "persisting frame = " << nSavedFrames << std::endl;
 
     std::string fileName =
-            base_path + std::to_string(distanceTarget) + "/D435i_" + std::to_string(index) + ".yaml";
+            base_path + std::to_string(distanceTarget) + "_" +std::to_string(currentDistanceMeasureCount) + "/D435i_" + std::to_string(index) + ".yaml";
     std::cout << "saving to file: " << fileName << std::endl;
     async_buf sbuf(fileName);
     std::ostream astream(&sbuf);
@@ -45,6 +45,11 @@ bool CameraFrameSaver::persistMatrixToFile(cv::Mat data, int index, std::string 
 
 void CameraFrameSaver::updateDistanceTarget(int newTarget) {
     distanceTarget = newTarget;
+}
+
+//new
+void CameraFrameSaver::updateCurrentDistanceMeasureCount(int newCount) {
+    currentDistanceMeasureCount = newCount;
 }
 
 std::list<frame_data> CameraFrameSaver::getFrameDataList() {

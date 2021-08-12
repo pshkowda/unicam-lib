@@ -22,6 +22,7 @@ public:
     bool addNewFrameToBuffer(cv::Mat data);
     bool persistMatrixToFile(cv::Mat data, int index, std::string base_path);
     void updateDistanceTarget(int newTarget);
+    void updateCurrentDistanceMeasureCount(int newCount); //new
 
     std::list<frame_data> getFrameDataList();
 
@@ -29,6 +30,7 @@ public:
 private:
     int nSavedFrames = 1;
     int distanceTarget = 1500;
+    int currentDistanceMeasureCount = 0; //new
     std::list<frame_data> frameDataList;
 };
 
