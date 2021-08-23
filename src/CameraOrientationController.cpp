@@ -15,6 +15,12 @@ struct CvType<CV_16U> {
     typedef unsigned short type_t;
 };
 
+struct CalibrationHistoryItem {
+    int baseAngle;
+    int topAngle;
+    int hzDisparity;
+    int vertDisparity;
+};
 /*
  * Controls the camera orientation control hardware to orient the camera's normal perpendicular to the wall's surface
  * INPUT: arduinoPort to communicate with, cv::Mat depthFrame to compute orientation against
@@ -41,26 +47,33 @@ CameraOrientationController::CameraOrientationController(const char *arduinoPort
 
 //returns true if the frame is aligned with the current aligned depth frame
 bool CameraOrientationController::realignDevice(cv::Mat &alignedDepthFrame) {
+    //todo: std::list<CalibrationHistoryItem> histor
 
     for (int baseAngle = 88; baseAngle <= 98; baseAngle++) {
         for (int topAngle = 150; topAngle <= 158; topAngle++) {
-
             realsenseCameraProvider->spinOnce();
             cv::Mat currentDepthImage = cameraControl->getDepthFrame();
             alignedDepthFrame = currentDepthImage;          //assign the current depth frame
+            int disp_vert, disp_hz;
+            computeDisparity(currentDepthImage, &disp_hz, &disp_vert);
+
 
             bool aligned = isAligned(currentDepthImage);
             cv::waitKey(100);
             if (aligned) {
                 return true;
             } else {
+                //todo: when isAligned is false, store the angles and disparity in a list
+                //todo: search for the angles for which the disparity was the minimum and send it to the motors
+
+                //todo: insert to the list
                 std::cout << "aligning... updating angles :: top angle = " << topAngle << " bottom angle " << baseAngle
                           << std::endl;
-                cv::waitKey(100);
+                cv::waitKey(200);
                 if (arduinoSerial) {
                     int data = fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
                     std::cout << "bytes printed = " << data << std::endl;
-                    cv::waitKey(100);
+                    cv::waitKey(200);
                 }
             }
         }
@@ -111,8 +124,7 @@ bool CameraOrientationController::isAligned(cv::Mat depthFrame) {
     bool aligned;
     computeDisparity(depthFrame, &horizontalness, &verticalness);
     if (horizontalness < ORIENTATION_THRESHOLD && horizontalness > -ORIENTATION_THRESHOLD &&
-        verticalness < ORIENTATION_THRESHOLD &&
-        verticalness > -ORIENTATION_THRESHOLD) {
+        verticalness < ORIENTATION_THRESHOLD && verticalness > -ORIENTATION_THRESHOLD) {
         aligned = true;
         std::cout << "aligned hz disparity   " << horizontalness << "  vertical disparity = " << verticalness
                   << std::endl;

@@ -59,6 +59,8 @@ int main() {
 
         for (frame_data dataFrame: frameBuffer)
         {
+            std::cout<<"Waiting for 1 seconds"<<std::endl;
+            cv::waitKey(1000);
             frameSaver->persistMatrixToFile(dataFrame.depthFrame, fileCount,
                                                 "/home/robot/Documents/unicam-lib-master/");
             fileCount++;
