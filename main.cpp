@@ -1,58 +1,49 @@
 #include <iostream>
 #include "headers/unicam/UnicamDeviceProvider.h"
 #include "headers/RealsenseProvider.h"
-#include "headers/frameSaver/CameraFrameSaver.h"
 #include <sys/stat.h>
-#include "headers/orientationControl/CameraOrientationController.h"
+#include "headers/cameraControl/CameraController.h"
 
 int main() {
 
     int currentDistance = 0;
-    bool isAlignedNow = false;
-    bool isDistanceEqualToTarget = false;
     int currentDistanceMeasureCount = 0;
     cv::Mat currentDepthFrameRef;
 
     //camera type and initialization
-    CameraFrameSaver* frameSaver = new CameraFrameSaver();
     UnicamDeviceProvider *realsenseCameraProvider = new RealsenseProvider();
     realsenseCameraProvider->initializeCameras();
-    UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("902512070480");  //connects to the camera
-
-    //to define camera controller
-    CameraOrientationController* controller = new CameraOrientationController("/dev/ttyACM0", camera, realsenseCameraProvider);
+    UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("f1121168");  //connects to the camera
+    CameraController* controller = new CameraController("/dev/ttyACM0", camera, realsenseCameraProvider);
 
     //to create a folder with name of the distance and measure
     std::cout << "Insert the current distance: ";
     std::cin >> currentDistance;
     std::cout << "Insert the current measure: ";
     std::cin >> currentDistanceMeasureCount;
-    mkdir(("/home/robot/Documents/unicam-lib-master/"+std::to_string(currentDistance)+"_"+std::to_string(currentDistanceMeasureCount)).c_str(), 0777);   //creates new specific folder
+    mkdir(("/home/pavel/unicam-lib/"+std::to_string(currentDistance)+"_"+std::to_string(currentDistanceMeasureCount)).c_str(), 0777);   //creates new specific folder
+
     //updates distance target to controller and frame saver
-    frameSaver->updateCurrentDistanceMeasureCount(currentDistanceMeasureCount);
-    frameSaver->updateDistanceTarget(currentDistance);
+    controller->updateCurrentDistanceMeasureCount(currentDistanceMeasureCount);
     controller->updateDistanceTarget(currentDistance);
 
     //to align camera
     controller->realignDevice(currentDepthFrameRef);
-
-    //isAlignedNow = controller->realignDevice(currentDepthFrameRef);                            //check if device is aligned
-    //isDistanceEqualToTarget = controller->isAtExpectedDistance(currentDepthFrameRef); //checks if expected distance is right to measured distance
+    std::cout << "Camera should be aligned now" << endl;
 
     //to determine number of frames taken
+
     int fileCount = 0;
     int requestedFileCount = 0;
     std::cout << "Set the requested number of frames (maximum is 50): "; //to determine requested number of frames
-    do {        //to prevent too long processes
-            std::cin >> requestedFileCount;
-    } while (requestedFileCount > 50);
+    std::cin >> requestedFileCount;
 
     while (fileCount < requestedFileCount)
     {
         currentDepthFrameRef = camera->getDepthFrame(); //gets new depth frame
-        frameSaver->addNewFrameToBuffer(currentDepthFrameRef);
+        controller->addNewFrameToBuffer(currentDepthFrameRef);
         realsenseCameraProvider->spinOnce(); //to get the next frame
-        std::list<frame_data> frameBuffer = frameSaver->getFrameDataList();
+        std::list<frame_data> frameBuffer = controller->getFrameDataList();
 
         std::cout<<"Waiting for 1 seconds before starting to buffer frames"<<std::endl;
         cv::waitKey(1000);
@@ -61,11 +52,13 @@ int main() {
         {
             std::cout<<"Waiting for 1 seconds"<<std::endl;
             cv::waitKey(1000);
-            frameSaver->persistMatrixToFile(dataFrame.depthFrame, fileCount,
-                                                "/home/robot/Documents/unicam-lib-master/");
+            controller->persistMatrixToFile(dataFrame.depthFrame, fileCount,
+                                                "/home/pavel/unicam-lib/");
             fileCount++;
         }
         frameBuffer.clear();    //clear the list for next measurement
     }
+
+
     std::cout<<"Ending"<<endl;
-}
+ }

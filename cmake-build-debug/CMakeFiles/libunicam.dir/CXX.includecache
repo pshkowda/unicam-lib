@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/robot/Documents/unicam-lib-master/headers/async_buf.h
+/home/pavel/unicam-lib/headers/async_buf.h
 condition_variable
 -
 fstream
@@ -24,13 +24,7 @@ thread
 vector
 -
 
-/home/robot/Documents/unicam-lib-master/headers/frame_data.h
-opencv2/core/mat.hpp
--
-string
--
-
-/home/robot/Documents/unicam-lib-master/headers/orientationControl/CameraOrientationController.h
+/home/pavel/unicam-lib/headers/cameraControl/CameraController.h
 string
 -
 opencv2/core/mat.hpp
@@ -38,37 +32,43 @@ opencv2/core/mat.hpp
 fstream
 -
 ../unicam/UnicamCamera.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamCamera.h
+/home/pavel/unicam-lib/headers/unicam/UnicamCamera.h
 ../unicam/UnicamDeviceProvider.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDeviceProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDeviceProvider.h
 ../frame_data.h
-/home/robot/Documents/unicam-lib-master/headers/frame_data.h
+/home/pavel/unicam-lib/headers/frame_data.h
 
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamCamera.h
+/home/pavel/unicam-lib/headers/frame_data.h
+opencv2/core/mat.hpp
+-
+string
+-
+
+/home/pavel/unicam-lib/headers/unicam/UnicamCamera.h
 opencv2/core/mat.hpp
 -
 
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDeviceProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDeviceProvider.h
 list
 -
 string
 -
 UnicamDevices.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDevices.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevices.h
 UnicamCamera.h
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamCamera.h
+/home/pavel/unicam-lib/headers/unicam/UnicamCamera.h
 
-/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDevices.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevices.h
 
-/home/robot/Documents/unicam-lib-master/src/CameraOrientationController.cpp
+/home/pavel/unicam-lib/src/CameraController.cpp
 iostream
 -
 opencv2/opencv.hpp
 -
-../headers/orientationControl/CameraOrientationController.h
-/home/robot/Documents/unicam-lib-master/headers/orientationControl/CameraOrientationController.h
+../headers/cameraControl/CameraController.h
+/home/pavel/unicam-lib/headers/cameraControl/CameraController.h
 ../headers/async_buf.h
-/home/robot/Documents/unicam-lib-master/headers/async_buf.h
+/home/pavel/unicam-lib/headers/async_buf.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -614,6 +614,8 @@ matrix.h
 algorithm
 -
 vector
+-
+unordered_map
 -
 
 /usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h

@@ -5,161 +5,161 @@
 		<Option title="libunicam"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\lib\;CMake Files\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\usr\local\lib\cmake\realsense2\;CMake Files\..\..\..\usr\local\lib\cmake\opencv4\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/robot/Documents/unicam-lib-master/cmake-build-debug"/>
+				<Option working_dir="/home/pavel/unicam-lib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/robot/Documents/unicam-lib-master/cmake-build-debug"/>
+				<Option working_dir="/home/pavel/unicam-lib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/robot/Documents/unicam-lib-master/cmake-build-debug"/>
+				<Option working_dir="/home/pavel/unicam-lib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="libunicam">
-				<Option output="/home/robot/Documents/unicam-lib-master/cmake-build-debug/libunicam" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/robot/Documents/unicam-lib-master/cmake-build-debug"/>
+				<Option output="/home/pavel/unicam-lib/cmake-build-debug/libunicam" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pavel/unicam-lib/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include/opencv4"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 libunicam"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 libunicam"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="libunicam/fast">
-				<Option output="/home/robot/Documents/unicam-lib-master/cmake-build-debug/libunicam" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/robot/Documents/unicam-lib-master/cmake-build-debug"/>
+				<Option output="/home/pavel/unicam-lib/cmake-build-debug/libunicam" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pavel/unicam-lib/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include/opencv4"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 libunicam/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/robot/Documents/unicam-lib-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 libunicam/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/pavel/unicam-lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/RealsenseCamera.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/RealsenseCamera.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/RealsenseDevice.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/RealsenseDevice.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/RealsenseProvider.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/RealsenseProvider.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/async_buf.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/async_buf.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/frameSaver/CameraFrameSaver.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/cameraControl/CameraController.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/frame_data.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/frame_data.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/orientationControl/CameraOrientationController.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/unicam/UnicamApi.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamApi.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/unicam/UnicamCamera.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamCamera.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/unicam/UnicamDeviceProvider.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDeviceProvider.h">
+		<Unit filename="/home/pavel/unicam-lib/headers/unicam/UnicamDevices.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/headers/unicam/UnicamDevices.h">
+		<Unit filename="/home/pavel/unicam-lib/main.cpp">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/main.cpp">
+		<Unit filename="/home/pavel/unicam-lib/src/CameraController.cpp">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/src/CameraFrameSaver.cpp">
+		<Unit filename="/home/pavel/unicam-lib/src/RealsenseDevice.cpp">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/src/CameraOrientationController.cpp">
+		<Unit filename="/home/pavel/unicam-lib/src/RealsenseProvider.cpp">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/src/RealsenseDevice.cpp">
+		<Unit filename="/home/pavel/unicam-lib/src/zedProvider.cpp">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/src/RealsenseProvider.cpp">
+		<Unit filename="/home/pavel/unicam-lib/src/zedProvider.h">
 			<Option target="libunicam"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/CMakeLists.txt">
+		<Unit filename="/home/pavel/unicam-lib/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2Config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/realsense2/realsense2Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\realsense2\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2ConfigVersion.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/realsense2/realsense2ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\realsense2\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2Targets-release.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/realsense2/realsense2Targets-noconfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\realsense2\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/lib/x86_64-linux-gnu/cmake/realsense2/realsense2Targets.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\realsense2\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/realsense2/realsense2Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\realsense2\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
-		<Unit filename="/home/robot/Documents/unicam-lib-master/../../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -1,4 +1,4 @@
-# Install script for directory: /home/robot/Documents/unicam-lib-master
+# Install script for directory: /home/pavel/unicam-lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/robot/Documents/unicam-lib-master/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pavel/unicam-lib/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

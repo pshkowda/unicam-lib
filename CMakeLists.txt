@@ -30,10 +30,7 @@ add_executable(libunicam
         src/RealsenseProvider.cpp
         src/RealsenseDevice.cpp
         headers/RealsenseCamera.h
-		src/CameraFrameSaver.cpp
-		headers/frameSaver/CameraFrameSaver.h
 		headers/frame_data.h
-		headers/orientationControl/CameraOrientationController.h
-		src/CameraOrientationController.cpp)
+		headers/cameraControl/CameraController.h 		src/CameraController.cpp src/zedProvider.cpp headers/zedProvider.h)
 
 target_link_libraries(libunicam ${LINK_LIBS})
