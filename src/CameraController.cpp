@@ -17,7 +17,7 @@ struct CvType<CV_16U> {
 
 CameraController::CameraController(const char *arduinoPort, UnicamCamera *camera,
                                                          UnicamDeviceProvider *realsenseCameraProvider) : cameraControl(camera),
-                                                                                        realsenseCameraProvider(realsenseCameraProvider) {
+                                                                                        zedCameraProvider(zedCameraProvider) {
     this->arduinoPort = arduinoPort;
     arduinoSerial = fopen(arduinoPort, "w");
     cv::waitKey(500);
@@ -32,33 +32,65 @@ CameraController::CameraController(const char *arduinoPort, UnicamCamera *camera
 //returns true if the frame is aligned with the current aligned depth frame
 bool CameraController::realignDevice(cv::Mat &alignedDepthFrame) {
 
-    for (int baseAngle = 88; baseAngle <= 98; baseAngle++) {
-        for (int topAngle = 150; topAngle <= 158; topAngle++) {
-            realsenseCameraProvider->spinOnce();
-            cv::Mat currentDepthImage = cameraControl->getDepthFrame();
-            alignedDepthFrame = currentDepthImage;          //assign the current depth frame
-            int disp_vert, disp_hz;
-            computeDisparity(currentDepthImage, &disp_hz, &disp_vert);
 
+    //new camera align system
+    bool aligned = false;
+    int disp_vert, disp_hz, alignIteration = 0, baseAngle = 100, topAngle = 150;
 
-            bool aligned = isAligned(currentDepthImage);
-            cv::waitKey(100);
-            if (aligned) {
-                return true;
-            } else {
-                std::cout << "aligning... updating angles :: top angle = " << topAngle << " bottom angle " << baseAngle
+    while (!aligned) {
+        zedCameraProvider->spinOnce();
+        cv::Mat currentDepthImage = cameraControl->getDepthFrame();
+        alignedDepthFrame = currentDepthImage;                      //assign the current depth frame
+        computeDisparity(currentDepthImage, &disp_hz, &disp_vert);
+        aligned = isAligned(currentDepthImage);
+        cv::waitKey(100);
+        if (aligned) {
+            aligned = true;
+            return true;
+        } else {
+            baseAngle += 2 *
+                         disp_vert;     //rotates the camera in vertical axis (by adding new values to the absolute rotational angle)
+            topAngle += 2 *
+                        disp_hz;        //rotates the camera in horizontal axis (by adding new values to the absolute rotational angle)
+            alignIteration++;               //to monitor iterations in the terminal
+            std::cout << "Aligning the frame. Iteration:" << alignIteration << std::endl;
+            cv::waitKey(200);
+            if (arduinoSerial) {
+                int data = fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
+                std::cout << "Printing iteration: " << alignIteration << " Angles:" << baseAngle << " & " << topAngle
                           << std::endl;
-                cv::waitKey(200);
-                if (arduinoSerial) {
-                    int data = fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
-                    std::cout << "bytes printed = " << data << std::endl;
-                    cv::waitKey(200);
-                }
             }
         }
     }
-    return false;
 }
+
+/* for (int baseAngle = 88; baseAngle <= 98; baseAngle++) {
+      for (int topAngle = 150; topAngle <= 158; topAngle++) {
+          zedCameraProvider->spinOnce();
+          cv::Mat currentDepthImage = cameraControl->getDepthFrame();
+          alignedDepthFrame = currentDepthImage;          //assign the current depth frame
+          int disp_vert, disp_hz;
+          computeDisparity(currentDepthImage, &disp_hz, &disp_vert);
+
+
+          bool aligned = isAligned(currentDepthImage);
+          cv::waitKey(100);
+          if (aligned) {
+              return true;
+          } else {
+              std::cout << "aligning... updating angles :: top angle = " << topAngle << " bottom angle " << baseAngle
+                        << std::endl;
+              cv::waitKey(200);
+              if (arduinoSerial) {
+                  int data = fprintf(arduinoSerial, "%d:%d\n", baseAngle, topAngle);
+                  std::cout << "bytes printed = " << data << std::endl;
+                  cv::waitKey(200);
+              }
+          }
+      }
+  }
+  return false; */
+
 
 //gets distance from center of current frame
 bool CameraController::isAtExpectedDistance(cv::Mat depthFrame) {

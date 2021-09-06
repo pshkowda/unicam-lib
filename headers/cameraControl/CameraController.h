@@ -40,7 +40,7 @@ private:
     std::string arduinoPort;
     FILE *arduinoSerial;
     UnicamCamera* cameraControl;
-    UnicamDeviceProvider *realsenseCameraProvider;
+    UnicamDeviceProvider *zedCameraProvider;
     std::list<frame_data> frameDataList;
 
     bool isAligned(cv::Mat depthFrame);

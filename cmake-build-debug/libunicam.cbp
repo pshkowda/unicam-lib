@@ -5,7 +5,7 @@
 		<Option title="libunicam"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\lib\;CMake Files\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\usr\local\lib\cmake\realsense2\;CMake Files\..\..\..\usr\local\lib\cmake\opencv4\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\local\;CMake Files\..\..\..\usr\local\lib\;CMake Files\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\usr\local\lib\cmake\realsense2\;CMake Files\..\..\..\usr\local\lib\cmake\opencv4\;CMake Files\..\..\..\usr\local\zed\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/pavel/unicam-lib/cmake-build-debug"/>
@@ -44,6 +44,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/zed/include"/>
+					<Add directory="/usr/local/cuda/include"/>
 					<Add directory="/usr/local/include/opencv4"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -68,6 +70,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/zed/include"/>
+					<Add directory="/usr/local/cuda/include"/>
 					<Add directory="/usr/local/include/opencv4"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
@@ -116,6 +120,9 @@
 		<Unit filename="/home/pavel/unicam-lib/headers/unicam/UnicamDevices.h">
 			<Option target="libunicam"/>
 		</Unit>
+		<Unit filename="/home/pavel/unicam-lib/headers/zedProvider.h">
+			<Option target="libunicam"/>
+		</Unit>
 		<Unit filename="/home/pavel/unicam-lib/main.cpp">
 			<Option target="libunicam"/>
 		</Unit>
@@ -129,9 +136,6 @@
 			<Option target="libunicam"/>
 		</Unit>
 		<Unit filename="/home/pavel/unicam-lib/src/zedProvider.cpp">
-			<Option target="libunicam"/>
-		</Unit>
-		<Unit filename="/home/pavel/unicam-lib/src/zedProvider.h">
 			<Option target="libunicam"/>
 		</Unit>
 		<Unit filename="/home/pavel/unicam-lib/CMakeLists.txt">
@@ -160,6 +164,12 @@
 		</Unit>
 		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/lib/cmake/opencv4/OpenCVModules.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\local\lib\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/zed/zed-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\zed\"/>
+		</Unit>
+		<Unit filename="/home/pavel/unicam-lib/../../../usr/local/zed/zed-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\local\zed\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

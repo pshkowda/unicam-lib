@@ -8,15 +8,18 @@ FIND_PACKAGE(PkgConfig)    # try find PKGConfig as it will be used if found
 FIND_PACKAGE(realsense2 REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(OpenCV 4 REQUIRED)
+find_package(ZED 3 REQUIRED)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
 include_directories(
         ${OpenCV_INCLUDE_DIRS}
         ${realsense_INCLUDE_DIR}
+		${ZED_INCLUDE_DIRS}
+		${CUDA_INCLUDE_DIRS}
 )
 
-set(LINK_LIBS  ${OpenCV_LIBRARIES} ${realsense2_LIBRARY})
+set(LINK_LIBS  ${OpenCV_LIBRARIES} ${realsense2_LIBRARY} ${ZED_LIBS} ${CUDA_LIBRARY_DIRS})
 link_directories(${LINK_LIBS})
 
 add_executable(libunicam
@@ -34,3 +37,5 @@ add_executable(libunicam
 		headers/cameraControl/CameraController.h 		src/CameraController.cpp src/zedProvider.cpp headers/zedProvider.h)
 
 target_link_libraries(libunicam ${LINK_LIBS})
+
+# https://github.com/stereolabs/zed-examples/blob/master/other/cuda%20refocus/CMakeLists.txt

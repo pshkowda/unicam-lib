@@ -3,6 +3,7 @@
 #include "headers/RealsenseProvider.h"
 #include <sys/stat.h>
 #include "headers/cameraControl/CameraController.h"
+#include "headers/zedProvider.h"
 
 int main() {
 
@@ -11,10 +12,11 @@ int main() {
     cv::Mat currentDepthFrameRef;
 
     //camera type and initialization
-    UnicamDeviceProvider *realsenseCameraProvider = new RealsenseProvider();
-    realsenseCameraProvider->initializeCameras();
-    UnicamCamera *camera = realsenseCameraProvider->getCameraByTag("f1121168");  //connects to the camera
-    CameraController* controller = new CameraController("/dev/ttyACM0", camera, realsenseCameraProvider);
+    //UnicamDeviceProvider *realsenseCameraProvider = new RealsenseProvider();
+    UnicamDeviceProvider *zedCameraProvider = new zedProvider();
+    zedCameraProvider->initializeCameras();
+    UnicamCamera *camera = zedCameraProvider->getCameraByTag("input zed camera tag here");  //connects to the camera
+    CameraController* controller = new CameraController("/dev/ttyACM0", camera, zedCameraProvider);
 
     //to create a folder with name of the distance and measure
     std::cout << "Insert the current distance: ";
@@ -42,7 +44,7 @@ int main() {
     {
         currentDepthFrameRef = camera->getDepthFrame(); //gets new depth frame
         controller->addNewFrameToBuffer(currentDepthFrameRef);
-        realsenseCameraProvider->spinOnce(); //to get the next frame
+        zedCameraProvider->spinOnce(); //to get the next frame
         std::list<frame_data> frameBuffer = controller->getFrameDataList();
 
         std::cout<<"Waiting for 1 seconds before starting to buffer frames"<<std::endl;

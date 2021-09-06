@@ -3,3 +3,9 @@
 //
 
 #include "../headers/zedProvider.h"
+#include <sl/Camera.hpp>
+
+void zedProvider::turnCameraOn()
+{
+    return;
+}

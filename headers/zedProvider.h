@@ -5,10 +5,17 @@
 #ifndef LIBUNICAM_ZEDPROVIDER_H
 #define LIBUNICAM_ZEDPROVIDER_H
 
+#include "unicam/UnicamDeviceProvider.h"
 
-class zedProvider {
+class zedProvider:
+
+        public UnicamDeviceProvider{
+
+public:
+    void turnCameraOn();
+
+private:
 
 };
-
 
 #endif //LIBUNICAM_ZEDPROVIDER_H
