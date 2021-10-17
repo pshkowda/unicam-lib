@@ -105,39 +105,39 @@ CMakeFiles/libunicam.dir/src/RealsenseDevice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libunicam.dir/src/RealsenseDevice.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pavel/unicam-lib/src/RealsenseDevice.cpp -o CMakeFiles/libunicam.dir/src/RealsenseDevice.cpp.s
 
-CMakeFiles/libunicam.dir/src/CameraController.cpp.o: CMakeFiles/libunicam.dir/flags.make
-CMakeFiles/libunicam.dir/src/CameraController.cpp.o: ../src/CameraController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pavel/unicam-lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libunicam.dir/src/CameraController.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libunicam.dir/src/CameraController.cpp.o -c /home/pavel/unicam-lib/src/CameraController.cpp
+CMakeFiles/libunicam.dir/src/CamController.cpp.o: CMakeFiles/libunicam.dir/flags.make
+CMakeFiles/libunicam.dir/src/CamController.cpp.o: ../src/CamController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pavel/unicam-lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libunicam.dir/src/CamController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libunicam.dir/src/CamController.cpp.o -c /home/pavel/unicam-lib/src/CamController.cpp
 
-CMakeFiles/libunicam.dir/src/CameraController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libunicam.dir/src/CameraController.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pavel/unicam-lib/src/CameraController.cpp > CMakeFiles/libunicam.dir/src/CameraController.cpp.i
+CMakeFiles/libunicam.dir/src/CamController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libunicam.dir/src/CamController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pavel/unicam-lib/src/CamController.cpp > CMakeFiles/libunicam.dir/src/CamController.cpp.i
 
-CMakeFiles/libunicam.dir/src/CameraController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libunicam.dir/src/CameraController.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pavel/unicam-lib/src/CameraController.cpp -o CMakeFiles/libunicam.dir/src/CameraController.cpp.s
+CMakeFiles/libunicam.dir/src/CamController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libunicam.dir/src/CamController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pavel/unicam-lib/src/CamController.cpp -o CMakeFiles/libunicam.dir/src/CamController.cpp.s
 
-CMakeFiles/libunicam.dir/src/zedProvider.cpp.o: CMakeFiles/libunicam.dir/flags.make
-CMakeFiles/libunicam.dir/src/zedProvider.cpp.o: ../src/zedProvider.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pavel/unicam-lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libunicam.dir/src/zedProvider.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libunicam.dir/src/zedProvider.cpp.o -c /home/pavel/unicam-lib/src/zedProvider.cpp
+CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o: CMakeFiles/libunicam.dir/flags.make
+CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o: ../headers/SaveFrame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pavel/unicam-lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o -c /home/pavel/unicam-lib/headers/SaveFrame.cpp
 
-CMakeFiles/libunicam.dir/src/zedProvider.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libunicam.dir/src/zedProvider.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pavel/unicam-lib/src/zedProvider.cpp > CMakeFiles/libunicam.dir/src/zedProvider.cpp.i
+CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pavel/unicam-lib/headers/SaveFrame.cpp > CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.i
 
-CMakeFiles/libunicam.dir/src/zedProvider.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libunicam.dir/src/zedProvider.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pavel/unicam-lib/src/zedProvider.cpp -o CMakeFiles/libunicam.dir/src/zedProvider.cpp.s
+CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pavel/unicam-lib/headers/SaveFrame.cpp -o CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.s
 
 # Object files for target libunicam
 libunicam_OBJECTS = \
 "CMakeFiles/libunicam.dir/main.cpp.o" \
 "CMakeFiles/libunicam.dir/src/RealsenseProvider.cpp.o" \
 "CMakeFiles/libunicam.dir/src/RealsenseDevice.cpp.o" \
-"CMakeFiles/libunicam.dir/src/CameraController.cpp.o" \
-"CMakeFiles/libunicam.dir/src/zedProvider.cpp.o"
+"CMakeFiles/libunicam.dir/src/CamController.cpp.o" \
+"CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o"
 
 # External object files for target libunicam
 libunicam_EXTERNAL_OBJECTS =
@@ -145,8 +145,8 @@ libunicam_EXTERNAL_OBJECTS =
 libunicam: CMakeFiles/libunicam.dir/main.cpp.o
 libunicam: CMakeFiles/libunicam.dir/src/RealsenseProvider.cpp.o
 libunicam: CMakeFiles/libunicam.dir/src/RealsenseDevice.cpp.o
-libunicam: CMakeFiles/libunicam.dir/src/CameraController.cpp.o
-libunicam: CMakeFiles/libunicam.dir/src/zedProvider.cpp.o
+libunicam: CMakeFiles/libunicam.dir/src/CamController.cpp.o
+libunicam: CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o
 libunicam: CMakeFiles/libunicam.dir/build.make
 libunicam: /usr/local/lib/libopencv_gapi.so.4.5.3
 libunicam: /usr/local/lib/libopencv_highgui.so.4.5.3

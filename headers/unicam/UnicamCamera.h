@@ -10,10 +10,16 @@
 class UnicamCamera {
 public:
 
-     void setSerialTag(std::string serialTag) { cameraTag = serialTag;}
-      virtual cv::Mat getRGBFrame() = 0;
-      virtual cv::Mat getIRFrame() = 0;
-      virtual cv::Mat getDepthFrame()= 0;
+    void setSerialTag(std::string serialTag)
+    {
+        cameraTag = serialTag;
+    }
+
+    virtual cv::Mat getRGBFrame() = 0;
+
+    virtual cv::Mat getIRFrame() = 0;
+
+    virtual cv::Mat getDepthFrame() = 0;
 
 protected:
     std::string cameraTag;

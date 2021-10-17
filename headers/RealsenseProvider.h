@@ -5,7 +5,7 @@
 #define DEVICE_CALIB_CAM 0
 #define DEVICE_REGULAR_CAM 1
 #include "RealsenseDevice.h"
-#include "unicam/UnicamDeviceProvider.h"
+#include "unicam/UnicamDevProvider.h"
 
 #include <librealsense2/rs.hpp>
 #include <opencv2/opencv.hpp>
@@ -16,7 +16,7 @@ using namespace rs2;
  * {@Class RealsenseProvider} is a layer built on top of @Class RealsenseDevice and allows a simple interface to
  * initialize the cameras and get relevant data from them.
  * **/
-class RealsenseProvider: public UnicamDeviceProvider {
+class RealsenseProvider: public UnicamDevProvider {
 public:
     void initializeCameras(){
         rs2::context ctx = provider.getContext();

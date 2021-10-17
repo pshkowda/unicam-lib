@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/zed/include -I/usr/local/cuda/include -isystem /usr/local/include/opencv4
+CXX_INCLUDES = -isystem /usr/local/include/opencv4
 
 CXX_FLAGS =  -std=c++11 -pthread -g -std=gnu++14
 

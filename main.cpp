@@ -1,66 +1,30 @@
 #include <iostream>
-#include "headers/unicam/UnicamDeviceProvider.h"
+#include "headers/unicam/UnicamDevProvider.h"
 #include "headers/RealsenseProvider.h"
-#include <sys/stat.h>
-#include "headers/cameraControl/CameraController.h"
-#include "headers/zedProvider.h"
+#include "headers/cameraControl/CamController.h"
+#include "headers/SaveFrame.h"
 
-int main() {
+using namespace std;
+using namespace cv;
 
-    int currentDistance = 0;
-    int currentDistanceMeasureCount = 0;
-    cv::Mat currentDepthFrameRef;
+int main()
+{
+    Mat currentDepthFrame;
 
-    //camera type and initialization
-    //UnicamDeviceProvider *realsenseCameraProvider = new RealsenseProvider();
-    UnicamDeviceProvider *zedCameraProvider = new zedProvider();
-    zedCameraProvider->initializeCameras();
-    UnicamCamera *camera = zedCameraProvider->getCameraByTag("input zed camera tag here");  //connects to the camera
-    CameraController* controller = new CameraController("/dev/ttyACM0", camera, zedCameraProvider);
+    //Initialize all necessary objects
+    UnicamDevProvider* realsense = new RealsenseProvider();
+    realsense->initializeCameras();
 
-    //to create a folder with name of the distance and measure
-    std::cout << "Insert the current distance: ";
-    std::cin >> currentDistance;
-    std::cout << "Insert the current measure: ";
-    std::cin >> currentDistanceMeasureCount;
-    mkdir(("/home/pavel/unicam-lib/"+std::to_string(currentDistance)+"_"+std::to_string(currentDistanceMeasureCount)).c_str(), 0777);   //creates new specific folder
+    UnicamCamera* camera = realsense->getCameraByTag("input camera tag here");  //connects to the camera
+    CamController* control = new CamController("/dev/ttyACM0", camera, realsense);
 
-    //updates distance target to controller and frame saver
-    controller->updateCurrentDistanceMeasureCount(currentDistanceMeasureCount);
-    controller->updateDistanceTarget(currentDistance);
+    //updates distance and measure values
+    control->updateDist();
 
-    //to align camera
-    controller->realignDevice(currentDepthFrameRef);
-    std::cout << "Camera should be aligned now" << endl;
+    //align camera
+    control->realignDevice(currentDepthFrame);
 
-    //to determine number of frames taken
-
-    int fileCount = 0;
-    int requestedFileCount = 0;
-    std::cout << "Set the requested number of frames (maximum is 50): "; //to determine requested number of frames
-    std::cin >> requestedFileCount;
-
-    while (fileCount < requestedFileCount)
-    {
-        currentDepthFrameRef = camera->getDepthFrame(); //gets new depth frame
-        controller->addNewFrameToBuffer(currentDepthFrameRef);
-        zedCameraProvider->spinOnce(); //to get the next frame
-        std::list<frame_data> frameBuffer = controller->getFrameDataList();
-
-        std::cout<<"Waiting for 1 seconds before starting to buffer frames"<<std::endl;
-        cv::waitKey(1000);
-
-        for (frame_data dataFrame: frameBuffer)
-        {
-            std::cout<<"Waiting for 1 seconds"<<std::endl;
-            cv::waitKey(1000);
-            controller->persistMatrixToFile(dataFrame.depthFrame, fileCount,
-                                                "/home/pavel/unicam-lib/");
-            fileCount++;
-        }
-        frameBuffer.clear();    //clear the list for next measurement
-    }
-
-
-    std::cout<<"Ending"<<endl;
- }
+    //initialize SaveFrame object
+    SaveFrame* save = new SaveFrame(control, realsense, camera);
+    save->saveFrames(currentDepthFrame);
+}

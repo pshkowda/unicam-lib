@@ -6,6 +6,54 @@
 
 #IncludeRegexTransform: 
 
+/home/pavel/unicam-lib/headers/RealsenseCamera.h
+librealsense2/hpp/rs_frame.hpp
+-
+librealsense2/hpp/rs_pipeline.hpp
+-
+unicam/UnicamCamera.h
+/home/pavel/unicam-lib/headers/unicam/UnicamCamera.h
+
+/home/pavel/unicam-lib/headers/RealsenseDevice.h
+librealsense2/hpp/rs_frame.hpp
+-
+librealsense2/hpp/rs_pipeline.hpp
+-
+mutex
+-
+map
+-
+iostream
+-
+RealsenseCamera.h
+/home/pavel/unicam-lib/headers/RealsenseCamera.h
+
+/home/pavel/unicam-lib/headers/RealsenseProvider.h
+RealsenseDevice.h
+/home/pavel/unicam-lib/headers/RealsenseDevice.h
+unicam/UnicamDevProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevProvider.h
+librealsense2/rs.hpp
+-
+opencv2/opencv.hpp
+-
+
+/home/pavel/unicam-lib/headers/SaveFrame.cpp
+SaveFrame.h
+/home/pavel/unicam-lib/headers/SaveFrame.h
+iostream
+-
+opencv2/opencv.hpp
+-
+
+/home/pavel/unicam-lib/headers/SaveFrame.h
+cameraControl/CamController.h
+/home/pavel/unicam-lib/headers/cameraControl/CamController.h
+RealsenseProvider.h
+/home/pavel/unicam-lib/headers/RealsenseProvider.h
+unicam/UnicamDevProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevProvider.h
+
 /home/pavel/unicam-lib/headers/async_buf.h
 condition_variable
 -
@@ -24,7 +72,7 @@ thread
 vector
 -
 
-/home/pavel/unicam-lib/headers/cameraControl/CameraController.h
+/home/pavel/unicam-lib/headers/cameraControl/CamController.h
 string
 -
 opencv2/core/mat.hpp
@@ -33,8 +81,8 @@ fstream
 -
 ../unicam/UnicamCamera.h
 /home/pavel/unicam-lib/headers/unicam/UnicamCamera.h
-../unicam/UnicamDeviceProvider.h
-/home/pavel/unicam-lib/headers/unicam/UnicamDeviceProvider.h
+../unicam/UnicamDevProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevProvider.h
 ../frame_data.h
 /home/pavel/unicam-lib/headers/frame_data.h
 
@@ -48,7 +96,7 @@ string
 opencv2/core/mat.hpp
 -
 
-/home/pavel/unicam-lib/headers/unicam/UnicamDeviceProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevProvider.h
 list
 -
 string
@@ -60,15 +108,29 @@ UnicamCamera.h
 
 /home/pavel/unicam-lib/headers/unicam/UnicamDevices.h
 
-/home/pavel/unicam-lib/src/CameraController.cpp
+/home/pavel/unicam-lib/main.cpp
+iostream
+-
+headers/unicam/UnicamDevProvider.h
+/home/pavel/unicam-lib/headers/unicam/UnicamDevProvider.h
+headers/RealsenseProvider.h
+/home/pavel/unicam-lib/headers/RealsenseProvider.h
+headers/cameraControl/CamController.h
+/home/pavel/unicam-lib/headers/cameraControl/CamController.h
+headers/SaveFrame.h
+/home/pavel/unicam-lib/headers/SaveFrame.h
+
+/home/pavel/unicam-lib/src/CamController.cpp
+../headers/cameraControl/CamController.h
+/home/pavel/unicam-lib/headers/cameraControl/CamController.h
+../headers/async_buf.h
+/home/pavel/unicam-lib/headers/async_buf.h
 iostream
 -
 opencv2/opencv.hpp
 -
-../headers/cameraControl/CameraController.h
-/home/pavel/unicam-lib/headers/cameraControl/CameraController.h
-../headers/async_buf.h
-/home/pavel/unicam-lib/headers/async_buf.h
+sys/stat.h
+-
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

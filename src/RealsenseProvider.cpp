@@ -3,9 +3,9 @@
 //
 
 #include "../headers/RealsenseProvider.h"
-#include "../headers/unicam/UnicamDeviceProvider.h"
+#include "../headers/unicam/UnicamDevProvider.h"
 
-bool UnicamDeviceProvider::isMultSupported() {
+bool UnicamDevProvider::isMultSupported() {
     return true;
 }
 
@@ -17,7 +17,7 @@ RealsenseCamera RealsenseProvider::getCameraStream(const string &cameraSerial) {
     return provider.getEnabledDevices().at(cameraSerial);
 }
 
-UnicamDevices UnicamDeviceProvider::getCameraType(){
+UnicamDevices UnicamDevProvider::getCameraType(){
      return UnicamDevices::REALSENSE;
 }
 

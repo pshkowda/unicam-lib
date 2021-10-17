@@ -129,6 +129,30 @@ libunicam/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/build
 .PHONY : libunicam/fast
 
+headers/SaveFrame.o: headers/SaveFrame.cpp.o
+.PHONY : headers/SaveFrame.o
+
+# target to build an object file
+headers/SaveFrame.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.o
+.PHONY : headers/SaveFrame.cpp.o
+
+headers/SaveFrame.i: headers/SaveFrame.cpp.i
+.PHONY : headers/SaveFrame.i
+
+# target to preprocess a source file
+headers/SaveFrame.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.i
+.PHONY : headers/SaveFrame.cpp.i
+
+headers/SaveFrame.s: headers/SaveFrame.cpp.s
+.PHONY : headers/SaveFrame.s
+
+# target to generate assembly for a file
+headers/SaveFrame.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/headers/SaveFrame.cpp.s
+.PHONY : headers/SaveFrame.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -153,29 +177,29 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/CameraController.o: src/CameraController.cpp.o
-.PHONY : src/CameraController.o
+src/CamController.o: src/CamController.cpp.o
+.PHONY : src/CamController.o
 
 # target to build an object file
-src/CameraController.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraController.cpp.o
-.PHONY : src/CameraController.cpp.o
+src/CamController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CamController.cpp.o
+.PHONY : src/CamController.cpp.o
 
-src/CameraController.i: src/CameraController.cpp.i
-.PHONY : src/CameraController.i
+src/CamController.i: src/CamController.cpp.i
+.PHONY : src/CamController.i
 
 # target to preprocess a source file
-src/CameraController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraController.cpp.i
-.PHONY : src/CameraController.cpp.i
+src/CamController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CamController.cpp.i
+.PHONY : src/CamController.cpp.i
 
-src/CameraController.s: src/CameraController.cpp.s
-.PHONY : src/CameraController.s
+src/CamController.s: src/CamController.cpp.s
+.PHONY : src/CamController.s
 
 # target to generate assembly for a file
-src/CameraController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CameraController.cpp.s
-.PHONY : src/CameraController.cpp.s
+src/CamController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/CamController.cpp.s
+.PHONY : src/CamController.cpp.s
 
 src/RealsenseDevice.o: src/RealsenseDevice.cpp.o
 .PHONY : src/RealsenseDevice.o
@@ -225,30 +249,6 @@ src/RealsenseProvider.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/RealsenseProvider.cpp.s
 .PHONY : src/RealsenseProvider.cpp.s
 
-src/zedProvider.o: src/zedProvider.cpp.o
-.PHONY : src/zedProvider.o
-
-# target to build an object file
-src/zedProvider.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/zedProvider.cpp.o
-.PHONY : src/zedProvider.cpp.o
-
-src/zedProvider.i: src/zedProvider.cpp.i
-.PHONY : src/zedProvider.i
-
-# target to preprocess a source file
-src/zedProvider.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/zedProvider.cpp.i
-.PHONY : src/zedProvider.cpp.i
-
-src/zedProvider.s: src/zedProvider.cpp.s
-.PHONY : src/zedProvider.s
-
-# target to generate assembly for a file
-src/zedProvider.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libunicam.dir/build.make CMakeFiles/libunicam.dir/src/zedProvider.cpp.s
-.PHONY : src/zedProvider.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -258,21 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... libunicam"
+	@echo "... headers/SaveFrame.o"
+	@echo "... headers/SaveFrame.i"
+	@echo "... headers/SaveFrame.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/CameraController.o"
-	@echo "... src/CameraController.i"
-	@echo "... src/CameraController.s"
+	@echo "... src/CamController.o"
+	@echo "... src/CamController.i"
+	@echo "... src/CamController.s"
 	@echo "... src/RealsenseDevice.o"
 	@echo "... src/RealsenseDevice.i"
 	@echo "... src/RealsenseDevice.s"
 	@echo "... src/RealsenseProvider.o"
 	@echo "... src/RealsenseProvider.i"
 	@echo "... src/RealsenseProvider.s"
-	@echo "... src/zedProvider.o"
-	@echo "... src/zedProvider.i"
-	@echo "... src/zedProvider.s"
 .PHONY : help
 
 

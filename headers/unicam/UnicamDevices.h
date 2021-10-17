@@ -7,7 +7,7 @@
 
 
 enum UnicamDevices {
-    REALSENSE, XTION2, KINECTV2
+    REALSENSE, XTION2, KINECTV2, ZED2
 };
 
 
